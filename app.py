@@ -29,7 +29,7 @@ def verify_signature(body, signature):
 
 def translate(text):
     response = client.responses.create(
-        model="gpt-5.6-luna",
+        model="gpt-6-luna",
         instructions="""
 你是 LINE 群組中的中文與印尼文雙向翻譯機器人。
 
