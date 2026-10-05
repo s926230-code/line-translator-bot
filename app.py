@@ -449,17 +449,17 @@ def callback():
                     )
 
             except Exception as e:
-    error_message = str(e)
-    print("VOICE ERROR:", error_message)
+                error_message = str(e)
+                print("VOICE ERROR:", error_message)
 
-    if reply_token:
-        try:
-            reply_line(
-                reply_token,
-                "⚠️ 語音處理失敗：\n" + error_message[:1000]
-            )
-        except Exception as reply_error:
-            print("ERROR REPLY FAILED:", str(reply_error))
+                if reply_token:
+                    try:
+                        reply_line(
+                            reply_token,
+                            "⚠️ 語音處理失敗：\n" + error_message[:1000]
+                        )
+                    except Exception as reply_error:
+                        print("ERROR REPLY FAILED:", str(reply_error))
 
             finally:
                 if audio_path and os.path.exists(audio_path):
